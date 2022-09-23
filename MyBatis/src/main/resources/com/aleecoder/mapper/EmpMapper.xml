@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aleecoder.mapper.EmpMapper">
+    <!--
+    手动处理实体类属性和数据库表的字段的映射关系
+    使用时，在标签中加入 resultMap="empResultMap"
+    -->
+    <resultMap id="empResultMap" type="com.aleecoder.pojo.Emp">
+        <!--主键 用id标签-->
+        <id column="empno" property="empno"/>
+        <!--非主键 用result标签-->
+        <result column="ename" property="ename"/>
+        <result column="job" property="job"/>
+        <result column="mgr" property="mgr"/>
+        <result column="hiredate" property="hiredate"/>
+        <result column="sal" property="sal"/>
+        <result column="comm" property="comm"/>
+        <result column="deptno" property="deptno"/>
+    </resultMap>
+
+    <!-- SQL片段-->
+    <sql id="empColumn">empno,ename,job,mgr,hiredate,sal,comm,deptno</sql>
+
+    <insert id="addEmp">
+        insert into emp
+        values (#{empno}, #{ename}, #{job}, #{mgr}, #{hiredate}, #{sal}, #{comm}, #{deptno})
+    </insert>
+    <update id="updateEnameByEmpno">
+        update emp
+        set ename = #{ename}
+        where empno = #{empno}
+    </update>
+
+    <!--删除操作，建议使用update标签，这是逻辑删除；数据是不能轻易从磁盘删掉的-->
+    <delete id="deleteByEmpno">
+        delete
+        from emp
+        where empno = #{empno}
+    </delete>
+
+    <!-- mybatis代理模式开发
+    1. 接口的名字和Mapper映射为文件名字必须保持一致(不包含拓展名)
+    2. Mapper映射文件的namespace必须是接口的全路径名
+    3. sql语句的id必须是对应方法的名
+    4. EmpMapper映射文件应该和接口编译之后放在同一个目录下   Spring Boot不一样
+    -->
+
+    <select id="findAll" resultType="com.aleecoder.pojo.Emp" >
+        select <include refid="empColumn"/>
+        from emp
+    </select>
+
+    <select id="findByEmpno" resultType="com.aleecoder.pojo.Emp">
+        select *
+        from emp
+        where empno = #{empno}
+    </select>
+
+    <select id="findByEmpnos" resultType="com.aleecoder.pojo.Emp">
+        <!--
+
+        -->
+        select * from emp where empno in
+        <foreach collection="array" separator="," open="(" close=")" item="deptno">
+            #{deptno}
+        </foreach>
+    </select>
+
+    <!-- 多参数问题
+    方式1：arg0, arg1,...
+    方式2：param1, param2,...
+    方式3：在接口方法参数的声明中通过@Param注解起别名    （此时不能使用arg* 但是可以继续使用param*）
+    -->
+    <select id="findByDeptnoSal" resultType="com.aleecoder.pojo.Emp">
+        <!-- select * from emp where deptno = #{arg0} and sal >= #{arg1}-->
+        <!-- select * from emp where deptno = #{param1} and sal >= #{param2}-->
+        select * from emp where deptno = #{deptno} and sal >= #{sal}
+    </select>
+
+    <select id="findByDeptnoSal2" resultType="com.aleecoder.pojo.Emp">
+        select *
+        from emp
+        where deptno = #{deptno}
+          and sal >= #{sal}
+    </select>
+
+    <!--单个引用类型 #{}中是对象的属性名-->
+    <select id="findByDeptnoSal3" resultType="com.aleecoder.pojo.Emp">
+        select *
+        from emp
+        where deptno = #{deptno}
+          and sal >= #{sal}
+    </select>
+
+    <!--多个引用类型 #{}中是对象的属性名-->
+    <select id="findByDeptnoSal4" resultType="com.aleecoder.pojo.Emp">
+        <!-- select * from emp where deptno = #{arg0.deptno} and sal >= #{arg1.sal} -->
+        select * from emp where deptno = #{emp1.deptno} and sal >= #{emp2.sal}
+    </select>
+    <!-- 模糊查询-->
+    <select id="findByEname" resultType="com.aleecoder.pojo.Emp">
+        select *
+        from emp
+        where ename like concat('%', #{ename}, '%')
+    </select>
+
+    <!--动态SQL-->
+    <select id="findByCondition" resultType="com.aleecoder.pojo.Emp">
+        select * from emp
+        <where>
+            <if test="empno != null">
+                and empno = #{empno}
+            </if>
+            <if test="ename != null and ename != ''">
+                and ename like concat('%',#{ename},'%')
+            </if>
+            <if test="job != null and job != ''">
+                and job = #{job}
+            </if>
+            <if test="mgr != null">
+                and mgr = #{mgr}
+            </if>
+            <if test="hiredate != null">
+                and hiredate = #{hiredate}
+            </if>
+
+            <!-- 当前面的when条件成立，后面的when就不再判断了-->
+            <choose>
+                <when test="sal!= null">
+                    and sal = #{sal}
+                </when>
+                <when test="comm != null">
+                    and comm = #{comm}
+                </when>
+                <when test="deptno != null">
+                    and deptno = #{deptno}
+                </when>
+            </choose>
+        </where>
+    </select>
+
+    <update id="updateByCondition">
+        update emp
+        <set>
+            <if test="ename != null and ename != ''">
+                ename = #{ename}
+            </if>
+            <if test="job != null and job != ''">
+                ,job = #{job}
+            </if>
+            <if test="mgr != null">
+                ,mgr = #{mgr}
+            </if>
+            <if test="hiredate != null">
+                ,hiredate = #{hiredate}
+            </if>
+            <if test="sal != null">
+                ,sal = #{sal}
+            </if>
+            <if test="comm != null">
+                ,comm = #{comm}
+            </if>
+            <if test="deptno != null">
+                ,deptno = #{deptno}
+            </if>
+        </set>
+        where empno = #{empno}
+    </update>
+
+    <update id="updateByCondition2">
+        <!--
+        prefix 要动态添加的前缀
+        prefixOverrides 要干掉的前缀
+        suffix 要补充的后缀
+        suffixOverrides 要干掉的后缀
+         -->
+        update emp
+        <trim prefix="set" prefixOverrides=",">
+            <if test="ename != null and ename != ''">
+                ename = #{ename}
+            </if>
+            <if test="job != null and job != ''">
+                ,job = #{job}
+            </if>
+            <if test="mgr != null">
+                ,mgr = #{mgr}
+            </if>
+            <if test="hiredate != null">
+                ,hiredate = #{hiredate}
+            </if>
+            <if test="sal != null">
+                ,sal = #{sal}
+            </if>
+            <if test="comm != null">
+                ,comm = #{comm}
+            </if>
+            <if test="deptno != null">
+                ,deptno = #{deptno}
+            </if>
+        </trim>
+        where empno = #{empno}
+    </update>
+
+
+    <!-- 多表关联查询 -->
+    <resultMap id="empJoinDept" type="com.aleecoder.pojo.Emp">
+        <!--设置Emp本身的8个属性的映射关系-->
+        <id column="empno" property="empno"/>
+        <result column="ename" property="ename"/>
+        <result column="job" property="job"/>
+        <result column="mgr" property="mgr"/>
+        <result column="hiredate" property="hiredate"/>
+        <result column="sal" property="sal"/>
+        <result column="comm" property="comm"/>
+        <result column="deptno" property="deptno"/>
+        <!--设置Dept作为Emp属性的映射关系-->
+        <!-- association 封装一对一信息关系的标签-->
+        <association property="dept" javaType="com.aleecoder.pojo.Dept">
+            <id column="deptno" property="deptno"/>
+            <result column="dname" property="dname"/>
+            <result column="loc" property="loc"/>
+        </association>
+    </resultMap>
+    <select id="findEmpJoinDeptByEmpno" resultMap="empJoinDept">
+        select *
+        from emp e
+                 left join dept d on e.deptno = d.deptno
+        where empno = #{empno}
+    </select>
+
+</mapper>

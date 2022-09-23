@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:utl="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <bean id="empDao" class="com.aleecoder.ioc.xml.dao.impl.EmpDaoImpl"/>
+    <!--1. 通过set方法给对象属性赋值-->
+    <bean id="user" class="com.aleecoder.ioc.xml.bean.User" lazy-init="true">
+        <property name="userId" value="1"/>
+        <property name="name" value="Tom"/>
+        <property name="password" value="big"/>
+    </bean>
+
+    <!--2. 通过有参构造给对象属性赋值-->
+    <bean id="user2" class="com.aleecoder.ioc.xml.bean.User" lazy-init="true">
+        <constructor-arg name="userId" value="2"/>
+        <constructor-arg name="name" value="WangJun"/>
+        <constructor-arg name="password" value="root"/>
+    </bean>
+
+    <!--3. 通过p名称空间和c名称空间给对象属性赋值-->
+    <bean id="user3" class="com.aleecoder.ioc.xml.bean.User" lazy-init="true" p:userId="3" p:name="XiaoHan"
+          p:password="golang"/>
+    <bean id="user4" class="com.aleecoder.ioc.xml.bean.User" lazy-init="true" c:userId="4" c:name="XiaoDong"
+          c:password="phpbest"/>
+
+    <!--4. 注入空值和特殊符号-->
+    <bean id="user5" class="com.aleecoder.ioc.xml.bean.User" lazy-init="true">
+        <property name="userId">
+            <null/>
+        </property>
+        <property name="name">
+            <value><![CDATA[&Tom]]></value>
+        </property>
+        <property name="password" value="big"/>
+    </bean>
+
+    <!--5. bean引用-->
+    <bean id="date" class="java.util.Date"/>
+    <bean id="mouse" class="com.aleecoder.ioc.xml.bean.Mouse">
+        <property name="name" value="Jerry"/>
+        <property name="birthdate" ref="date"/>
+    </bean>
+    <bean id="cat" class="com.aleecoder.ioc.xml.bean.Cat">
+        <property name="name" value="Tom"/>
+        <!--引用外部的bean-->
+        <property name="mouse" ref="mouse"/>
+    </bean>
+
+
+    <!--定义公共集合-->
+    <utl:list id="bookLists">
+        <bean id="book1" class="com.aleecoder.ioc.xml.bean.Book" p:bname="Spring" p:author="Tom"/>
+        <bean id="book2" class="com.aleecoder.ioc.xml.bean.Book" p:bname="Spring MVC" p:author="Jerry"/>
+        <bean id="book3" class="com.aleecoder.ioc.xml.bean.Book" p:bname="MyBatis" p:author="Fang"/>
+    </utl:list>
+    <utl:list id="bookList">
+        <value>Spring</value>
+        <value>Spring MVC</value>
+        <value>MyBatis</value>
+    </utl:list>
+    <utl:set id="bookSet">
+        <value>Spring</value>
+        <value>Spring MVC</value>
+        <value>MyBatis</value>
+    </utl:set>
+    <utl:map id="bookMap">
+        <entry key="Spring" value="Tom"/>
+        <entry key="Spring MVC" value="Jerry"/>
+        <entry key="MyBatis" value="Fang"/>
+    </utl:map>
+
+    <!--6. 集合注入-->
+    <bean id="student" class="com.aleecoder.ioc.xml.bean.Student">
+        <!--数组属性注入-->
+        <property name="books">
+            <array>
+                <value>Spring</value>
+                <value>Spring MVC</value>
+                <value>MyBatis</value>
+            </array>
+        </property>
+        <!--set集合注入-->
+        <property name="bookSet" ref="bookSet"/>
+        <!--List集合注入-->
+        <property name="bookList" ref="bookList"/>
+        <!--Map集合注入-->
+        <property name="bookMap" ref="bookMap"/>
+        <!--List对象集合注入-->
+        <property name="bookLists" ref="bookLists"/>
+    </bean>
+
+    <!--7. 工厂方式获取bean-->
+    <bean id="bookFactory" class="com.aleecoder.ioc.xml.bean.BookFactory"/>
+
+    <!--8. bean生命周期-->
+
+    <!--9. 自动装配-->
+    <bean id="dept" class="com.aleecoder.ioc.xml.bean.Dept"/>
+    <!--
+    autowire 属性控制自动将容器中的对象注入到当前对象的属性上
+    byName 根据目标id值和属性值注入,要保证当前对象的属性值和目标对象的id值一致
+    byType 根据类型注入,要保证相同类型的目标对象在容器中只有一个实例
+    -->
+    <bean id="emp" class="com.aleecoder.ioc.xml.bean.Emp" autowire="byType"/>
+
+    <!--10. Druid数据源-->
+    <!--读取jdbc.properties属性配置文件-->
+    <!--经研究发现spring扫描注册PropertyPlaceholderConfigurer的bean被设置为单例模式，spring只会扫描一个PropertyPlaceholderConfigurer
+    或者<context:property-placeholder>配置，其它多余将被忽略，所以才会出现替代属性值的占位符无法解析。
+    因此无论 bean的配置 还是 context的配置，对加入忽略不能解析的设置-->
+    <context:property-placeholder location="jdbc.properties" ignore-unresolvable="true"/>
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="username" value="${jdbc_username}"/>
+        <property name="password" value="${jdbc_password}"/>
+        <property name="url" value="${jdbc_url}"/>
+        <property name="driverClassName" value="${jdbc_driver}"/>
+        <property name="initialSize" value="1"/>
+    </bean>
+
+    <!--11. 开启注解包扫描-->
+    <!--
+    use-default-filters="false" 默认值为true 代表使用默认的扫描过滤器
+    默认的扫描过滤器会识别并包含 @Component @Controller @Service @Repository 四个注解
+    不使用默认的filter,使用我们自己的filter
+
+    控制只扫描Controller注解
+    <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    控制不扫描Controller注解
+    <context:exclude-filter  type="annotation" expression="org.springframework.stereotype.Controller"/>
+    -->
+    <!--测试的时候请手动指定扫描的包！！！-->
+    <context:component-scan base-package="com.aleecoder.jdbc"/>
+    <context:property-placeholder location="teacher.properties"/>
+
+    <!--12. aop autoProxy自动生成代理对象-->
+    <aop:aspectj-autoproxy/>
+
+    <!--13. 配置JDBCTemplate对象,并向里面注入DataSource-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <!--通过set方法注入连接池-->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <!--14. 声明事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+</beans>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/JavaEE.iml" filepath="$PROJECT_DIR$/.idea/JavaEE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MyBatis/MyBatis.iml" filepath="$PROJECT_DIR$/MyBatis/MyBatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReverseEngineering/ReverseEngineering.iml" filepath="$PROJECT_DIR$/ReverseEngineering/ReverseEngineering.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Servlet/Servlet.iml" filepath="$PROJECT_DIR$/Servlet/Servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Spring/Spring.iml" filepath="$PROJECT_DIR$/Spring/Spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBoot/SpringBoot.iml" filepath="$PROJECT_DIR$/SpringBoot/SpringBoot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringMVC/SpringMVC.iml" filepath="$PROJECT_DIR$/SpringMVC/SpringMVC.iml" />
+    </modules>
+  </component>
+</project>

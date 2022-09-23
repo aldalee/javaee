@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Servlet" />
+        <module name="SpringMVC" />
+        <module name="SpringBoot" />
+        <module name="Spring" />
+        <module name="ReverseEngineering" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="demo" target="1.8" />
+      <module name="MyBatis" target="1.8" />
+      <module name="ReverseEngineering" target="1.8" />
+      <module name="Servlet" target="1.8" />
+      <module name="Spring" target="1.8" />
+      <module name="SpringBoot" target="1.8" />
+      <module name="SpringBoot_" target="1.8" />
+      <module name="SpringMVC" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SpringBoot" options="-parameters" />
+      <module name="SpringBoot_" options="-parameters" />
+    </option>
+  </component>
+</project>

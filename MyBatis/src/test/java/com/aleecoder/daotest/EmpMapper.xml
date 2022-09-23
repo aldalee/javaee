@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="EmpMapper">
+    <!--===========================mybatis查询===============================================-->
+
+    <!--查询全部员工信息 返回多个对象的List集合-->
+    <select id="findAll" resultType="emp">
+        select *
+        from emp
+    </select>
+
+    <!--返回多个对象的Map集合 <key,Emp>-->
+    <select id="findEmpMap" resultType="map">
+        select *
+        from emp
+    </select>
+
+    <!--============================mybatis参数传递的三种方式=======================================-->
+    <!-- 根据员工工号查询员工全部信息，返回单个员工对象-->
+    <!-- parameterType 在有参数情况下也可以省略不写-->
+    <!--
+    在SQL语句中可以使用${} 或 #{} 代表参数的占位
+        如果参数是单个基本数据类型，{}中的名字可以任意写，但要见名知意
+        ${} 底层使用的Statement对象，参数是以字符串拼接的形式设置
+        #{} 底层使用PreparedStatement对象，参数使用？作为占位符，它可以防止SQL注入攻击
+    -->
+    <select id="findByEmpno" resultType="emp" parameterType="int">
+        select *
+        from emp
+        where empno = #{empno}
+    </select>
+
+
+    <!-- 查询指定部门号和指定最低薪资的员工信息-->
+    <!-- > 和 < 转译参照HTML转译规则-->
+    <select id="findEmpByDS" resultType="emp" parameterType="map">
+        select * from emp where deptno = #{deptno} and sal >= #{sal}
+    </select>
+
+    <!-- 参数如果是自定义类型，则#{}中传入的是参数的属性名 底层借助反射-->
+    <select id="findEmpByDS2" resultType="emp" parameterType="emp">
+        select * from emp where deptno = #{deptno} and sal >= #{sal}
+    </select>
+
+
+    <!--============================mybatis完成DML全部操作==========================================-->
+
+    <insert id="insertEmp">
+        insert into emp values (#{empno},#{ename},#{job},#{mgr},#{hiredate},#{sal},#{comm},#{deptno})
+    </insert>
+
+    <update id="updateEmp">
+        update emp set ename = #{ename} where empno = #{empno}
+    </update>
+
+    <delete id="deleteEmp">
+        delete from emp where empno >= #{empno}
+    </delete>
+</mapper>

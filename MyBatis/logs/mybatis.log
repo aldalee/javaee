@@ -1,0 +1,99 @@
+2022-03-26 19:49:30 org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105) LogFactory.java DEBUG Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2022-03-26 19:49:30 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 19:49:30 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 19:49:30 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 19:49:30 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 19:49:30 org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:136) JdbcTransaction.java DEBUG Opening JDBC Connection
+2022-03-26 19:49:30 org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:424) PooledDataSource.java DEBUG Created connection 370440646.
+2022-03-26 19:49:31 org.apache.ibatis.transaction.jdbc.JdbcTransaction.setDesiredAutoCommit(JdbcTransaction.java:100) JdbcTransaction.java DEBUG Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@161479c6]
+2022-03-26 19:49:31 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:143) BaseJdbcLogger.java DEBUG ==>  Preparing: select * from dept 
+2022-03-26 19:49:31 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:143) BaseJdbcLogger.java DEBUG ==> Parameters: 
+2022-03-26 19:49:31 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:143) BaseJdbcLogger.java DEBUG <==      Total: 6
+2022-03-26 19:49:31 org.apache.ibatis.transaction.jdbc.JdbcTransaction.resetAutoCommit(JdbcTransaction.java:122) JdbcTransaction.java DEBUG Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@161479c6]
+2022-03-26 19:49:31 org.apache.ibatis.transaction.jdbc.JdbcTransaction.close(JdbcTransaction.java:90) JdbcTransaction.java DEBUG Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@161479c6]
+2022-03-26 19:49:31 org.apache.ibatis.datasource.pooled.PooledDataSource.pushConnection(PooledDataSource.java:381) PooledDataSource.java DEBUG Returned connection 370440646 to pool.
+2022-03-26 19:50:58 org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105) LogFactory.java DEBUG Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2022-03-26 19:50:58 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 19:50:58 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 19:50:58 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 19:50:58 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 19:50:58 org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:136) JdbcTransaction.java DEBUG Opening JDBC Connection
+2022-03-26 19:50:59 org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:424) PooledDataSource.java DEBUG Created connection 1472465.
+2022-03-26 19:50:59 org.apache.ibatis.transaction.jdbc.JdbcTransaction.setDesiredAutoCommit(JdbcTransaction.java:100) JdbcTransaction.java DEBUG Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1677d1]
+2022-03-26 19:50:59 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:143) BaseJdbcLogger.java DEBUG ==>  Preparing: select * from dept 
+2022-03-26 19:50:59 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:143) BaseJdbcLogger.java DEBUG ==> Parameters: 
+2022-03-26 19:50:59 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:143) BaseJdbcLogger.java DEBUG <==      Total: 6
+2022-03-26 19:50:59 org.apache.ibatis.transaction.jdbc.JdbcTransaction.resetAutoCommit(JdbcTransaction.java:122) JdbcTransaction.java DEBUG Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1677d1]
+2022-03-26 19:50:59 org.apache.ibatis.transaction.jdbc.JdbcTransaction.close(JdbcTransaction.java:90) JdbcTransaction.java DEBUG Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@1677d1]
+2022-03-26 19:50:59 org.apache.ibatis.datasource.pooled.PooledDataSource.pushConnection(PooledDataSource.java:381) PooledDataSource.java DEBUG Returned connection 1472465 to pool.
+2022-03-26 20:08:14 org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105) LogFactory.java DEBUG Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2022-03-26 20:08:14 org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105) LogFactory.java DEBUG Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2022-03-26 20:08:14 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 20:08:14 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 20:08:14 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 20:08:14 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 20:08:14 org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:136) JdbcTransaction.java DEBUG Opening JDBC Connection
+2022-03-26 20:08:14 org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:424) PooledDataSource.java DEBUG Created connection 1846406218.
+2022-03-26 20:08:14 org.apache.ibatis.transaction.jdbc.JdbcTransaction.setDesiredAutoCommit(JdbcTransaction.java:100) JdbcTransaction.java DEBUG Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6e0dec4a]
+2022-03-26 20:08:14 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:143) BaseJdbcLogger.java DEBUG ==>  Preparing: select * from dept 
+2022-03-26 20:08:14 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:143) BaseJdbcLogger.java DEBUG ==> Parameters: 
+2022-03-26 20:08:14 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:143) BaseJdbcLogger.java DEBUG <==      Total: 6
+2022-03-26 20:08:15 org.apache.ibatis.transaction.jdbc.JdbcTransaction.resetAutoCommit(JdbcTransaction.java:122) JdbcTransaction.java DEBUG Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6e0dec4a]
+2022-03-26 20:08:15 org.apache.ibatis.transaction.jdbc.JdbcTransaction.close(JdbcTransaction.java:90) JdbcTransaction.java DEBUG Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@6e0dec4a]
+2022-03-26 20:08:15 org.apache.ibatis.datasource.pooled.PooledDataSource.pushConnection(PooledDataSource.java:381) PooledDataSource.java DEBUG Returned connection 1846406218 to pool.
+2022-03-26 20:12:54 org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105) LogFactory.java DEBUG Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2022-03-26 20:12:54 org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105) LogFactory.java DEBUG Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2022-03-26 20:12:54 org.apache.ibatis.io.VFS.getClass(VFS.java:108) VFS.java DEBUG Class not found: org.jboss.vfs.VFS
+2022-03-26 20:12:54 org.apache.ibatis.io.JBoss6VFS.setInvalid(JBoss6VFS.java:142) JBoss6VFS.java DEBUG JBoss 6 VFS API is not available in this environment.
+2022-03-26 20:12:54 org.apache.ibatis.io.VFS.getClass(VFS.java:108) VFS.java DEBUG Class not found: org.jboss.vfs.VirtualFile
+2022-03-26 20:12:54 org.apache.ibatis.io.VFS$VFSHolder.createVFS(VFS.java:63) VFS.java DEBUG VFS implementation org.apache.ibatis.io.JBoss6VFS is not valid in this environment.
+2022-03-26 20:12:54 org.apache.ibatis.io.VFS$VFSHolder.createVFS(VFS.java:74) VFS.java DEBUG Using VFS adapter org.apache.ibatis.io.DefaultVFS
+2022-03-26 20:12:54 org.apache.ibatis.io.DefaultVFS.findJarForResource(DefaultVFS.java:222) DefaultVFS.java DEBUG Find JAR URL: file:/D:/WorkSpace/JavaCore/JavaEE/MyBatis/target/classes/com/aleecoder/pojo
+2022-03-26 20:12:54 org.apache.ibatis.io.DefaultVFS.findJarForResource(DefaultVFS.java:250) DefaultVFS.java DEBUG Not a JAR: file:/D:/WorkSpace/JavaCore/JavaEE/MyBatis/target/classes/com/aleecoder/pojo
+2022-03-26 20:12:54 org.apache.ibatis.io.DefaultVFS.list(DefaultVFS.java:102) DefaultVFS.java DEBUG Reader entry: Dept.class
+2022-03-26 20:12:54 org.apache.ibatis.io.DefaultVFS.list(DefaultVFS.java:113) DefaultVFS.java DEBUG Listing file:/D:/WorkSpace/JavaCore/JavaEE/MyBatis/target/classes/com/aleecoder/pojo
+2022-03-26 20:12:54 org.apache.ibatis.io.DefaultVFS.findJarForResource(DefaultVFS.java:222) DefaultVFS.java DEBUG Find JAR URL: file:/D:/WorkSpace/JavaCore/JavaEE/MyBatis/target/classes/com/aleecoder/pojo/Dept.class
+2022-03-26 20:12:54 org.apache.ibatis.io.DefaultVFS.findJarForResource(DefaultVFS.java:250) DefaultVFS.java DEBUG Not a JAR: file:/D:/WorkSpace/JavaCore/JavaEE/MyBatis/target/classes/com/aleecoder/pojo/Dept.class
+2022-03-26 20:12:54 org.apache.ibatis.io.DefaultVFS.list(DefaultVFS.java:102) DefaultVFS.java DEBUG Reader entry: ����   4 `	  H	  I	  J K
+2022-03-26 20:12:54 org.apache.ibatis.io.ResolverUtil.addIfMatching(ResolverUtil.java:256) ResolverUtil.java DEBUG Checking to see if class com.aleecoder.pojo.Dept matches criteria [is assignable to Object]
+2022-03-26 20:12:54 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 20:12:54 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 20:12:54 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 20:12:54 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 20:12:54 org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:136) JdbcTransaction.java DEBUG Opening JDBC Connection
+2022-03-26 20:12:54 org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:424) PooledDataSource.java DEBUG Created connection 910091170.
+2022-03-26 20:12:54 org.apache.ibatis.transaction.jdbc.JdbcTransaction.setDesiredAutoCommit(JdbcTransaction.java:100) JdbcTransaction.java DEBUG Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@363ee3a2]
+2022-03-26 20:12:54 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:143) BaseJdbcLogger.java DEBUG ==>  Preparing: select * from dept 
+2022-03-26 20:12:54 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:143) BaseJdbcLogger.java DEBUG ==> Parameters: 
+2022-03-26 20:12:54 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:143) BaseJdbcLogger.java DEBUG <==      Total: 6
+2022-03-26 20:12:54 org.apache.ibatis.transaction.jdbc.JdbcTransaction.resetAutoCommit(JdbcTransaction.java:122) JdbcTransaction.java DEBUG Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@363ee3a2]
+2022-03-26 20:12:54 org.apache.ibatis.transaction.jdbc.JdbcTransaction.close(JdbcTransaction.java:90) JdbcTransaction.java DEBUG Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@363ee3a2]
+2022-03-26 20:12:54 org.apache.ibatis.datasource.pooled.PooledDataSource.pushConnection(PooledDataSource.java:381) PooledDataSource.java DEBUG Returned connection 910091170 to pool.
+2022-03-26 20:22:50 org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105) LogFactory.java DEBUG Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2022-03-26 20:22:50 org.apache.ibatis.logging.LogFactory.setImplementation(LogFactory.java:105) LogFactory.java DEBUG Logging initialized using 'class org.apache.ibatis.logging.log4j.Log4jImpl' adapter.
+2022-03-26 20:22:50 org.apache.ibatis.io.VFS.getClass(VFS.java:108) VFS.java DEBUG Class not found: org.jboss.vfs.VFS
+2022-03-26 20:22:50 org.apache.ibatis.io.JBoss6VFS.setInvalid(JBoss6VFS.java:142) JBoss6VFS.java DEBUG JBoss 6 VFS API is not available in this environment.
+2022-03-26 20:22:50 org.apache.ibatis.io.VFS.getClass(VFS.java:108) VFS.java DEBUG Class not found: org.jboss.vfs.VirtualFile
+2022-03-26 20:22:50 org.apache.ibatis.io.VFS$VFSHolder.createVFS(VFS.java:63) VFS.java DEBUG VFS implementation org.apache.ibatis.io.JBoss6VFS is not valid in this environment.
+2022-03-26 20:22:50 org.apache.ibatis.io.VFS$VFSHolder.createVFS(VFS.java:74) VFS.java DEBUG Using VFS adapter org.apache.ibatis.io.DefaultVFS
+2022-03-26 20:22:50 org.apache.ibatis.io.DefaultVFS.findJarForResource(DefaultVFS.java:222) DefaultVFS.java DEBUG Find JAR URL: file:/D:/WorkSpace/JavaCore/JavaEE/MyBatis/target/classes/com/aleecoder/pojo
+2022-03-26 20:22:50 org.apache.ibatis.io.DefaultVFS.findJarForResource(DefaultVFS.java:250) DefaultVFS.java DEBUG Not a JAR: file:/D:/WorkSpace/JavaCore/JavaEE/MyBatis/target/classes/com/aleecoder/pojo
+2022-03-26 20:22:50 org.apache.ibatis.io.DefaultVFS.list(DefaultVFS.java:102) DefaultVFS.java DEBUG Reader entry: Dept.class
+2022-03-26 20:22:50 org.apache.ibatis.io.DefaultVFS.list(DefaultVFS.java:113) DefaultVFS.java DEBUG Listing file:/D:/WorkSpace/JavaCore/JavaEE/MyBatis/target/classes/com/aleecoder/pojo
+2022-03-26 20:22:50 org.apache.ibatis.io.DefaultVFS.findJarForResource(DefaultVFS.java:222) DefaultVFS.java DEBUG Find JAR URL: file:/D:/WorkSpace/JavaCore/JavaEE/MyBatis/target/classes/com/aleecoder/pojo/Dept.class
+2022-03-26 20:22:50 org.apache.ibatis.io.DefaultVFS.findJarForResource(DefaultVFS.java:250) DefaultVFS.java DEBUG Not a JAR: file:/D:/WorkSpace/JavaCore/JavaEE/MyBatis/target/classes/com/aleecoder/pojo/Dept.class
+2022-03-26 20:22:50 org.apache.ibatis.io.DefaultVFS.list(DefaultVFS.java:102) DefaultVFS.java DEBUG Reader entry: ����   4 `	  H	  I	  J K
+2022-03-26 20:22:50 org.apache.ibatis.io.ResolverUtil.addIfMatching(ResolverUtil.java:256) ResolverUtil.java DEBUG Checking to see if class com.aleecoder.pojo.Dept matches criteria [is assignable to Object]
+2022-03-26 20:22:50 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 20:22:50 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 20:22:50 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 20:22:50 org.apache.ibatis.datasource.pooled.PooledDataSource.forceCloseAll(PooledDataSource.java:353) PooledDataSource.java DEBUG PooledDataSource forcefully closed/removed all connections.
+2022-03-26 20:22:50 org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:136) JdbcTransaction.java DEBUG Opening JDBC Connection
+2022-03-26 20:22:50 org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:424) PooledDataSource.java DEBUG Created connection 1183888521.
+2022-03-26 20:22:50 org.apache.ibatis.transaction.jdbc.JdbcTransaction.setDesiredAutoCommit(JdbcTransaction.java:100) JdbcTransaction.java DEBUG Setting autocommit to false on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@4690b489]
+2022-03-26 20:22:50 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:143) BaseJdbcLogger.java DEBUG ==>  Preparing: select * from dept 
+2022-03-26 20:22:50 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:143) BaseJdbcLogger.java DEBUG ==> Parameters: 
+2022-03-26 20:22:51 org.apache.ibatis.logging.jdbc.BaseJdbcLogger.debug(BaseJdbcLogger.java:143) BaseJdbcLogger.java DEBUG <==      Total: 6
+2022-03-26 20:22:51 org.apache.ibatis.transaction.jdbc.JdbcTransaction.resetAutoCommit(JdbcTransaction.java:122) JdbcTransaction.java DEBUG Resetting autocommit to true on JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@4690b489]
+2022-03-26 20:22:51 org.apache.ibatis.transaction.jdbc.JdbcTransaction.close(JdbcTransaction.java:90) JdbcTransaction.java DEBUG Closing JDBC Connection [com.mysql.cj.jdbc.ConnectionImpl@4690b489]
+2022-03-26 20:22:51 org.apache.ibatis.datasource.pooled.PooledDataSource.pushConnection(PooledDataSource.java:381) PooledDataSource.java DEBUG Returned connection 1183888521 to pool.

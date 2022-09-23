@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 严格按照顺序 https://mybatis.org/mybatis-3/zh/configuration.html#properties 配置-->
+    <properties resource="jdbc.properties"/>
+
+    <settings>
+        <!-- 指定mybatis日志方式，如果不指定，会自动处理。默认为log4j -->
+        <setting name="logImpl" value="LOG4J"/>
+    </settings>
+
+    <!--<typeAliases>
+        &lt;!&ndash; 包扫描起别名，默认类的短路径名首字母小写  但是会引起控制台日志Reader entry的乱码&ndash;&gt;
+        <package name="com.aleecoder.pojo"/>
+    </typeAliases>-->
+
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 加载mapper映射文件 -->
+    <mappers>
+        <!--通过类的全路径去找mapper映射文件-->
+        <mapper class="com.aleecoder.mapper.EmpMapper"/>
+        <mapper class="com.aleecoder.mapper.DeptMapper"/>
+        <mapper class="com.aleecoder.mapper.ProjectMapper"/>
+<!--        <package name="com.aleecoder.mapper"/>-->
+<!--        <mapper resource="com/aleecoder/mapper/DeptMapper.xml"/>-->
+    </mappers>
+</configuration>
